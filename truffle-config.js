@@ -5,7 +5,7 @@ module.exports = {
  
   networks: {
     
-    develpoment: {
+    development: {
       host: "127.0.0.1",
       port: 7545,
       network_id: "*"
@@ -33,12 +33,29 @@ module.exports = {
 
   compilers: {
     solc: {
-      version: "0.6.6"
- 
+      version: "0.6.12",
+      settings: {
+        optimizer: {
+          enabled: true,
+          runs: 1
+        },
+        evmVersion: "istanbul", 
+        outputSelection: {
+          "*": {
+            "": [
+              "ast"
+            ],
+            "*": [
+              "evm.bytecode.object",
+              "evm.deployedBytecode.object",
+              "abi",
+              "evm.bytecode.sourceMap",
+              "evm.deployedBytecode.sourceMap",
+              "metadata"
+            ]
+          }
+        }
+    }
     }
   },
-
-  db: {
-    enabled: false
-  }
 };

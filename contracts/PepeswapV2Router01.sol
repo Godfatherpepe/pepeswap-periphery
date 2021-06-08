@@ -1,29 +1,29 @@
-pragma solidity =0.6.6;
+pragma solidity =0.6.12;
 
 import '@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol';
 import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
 
 import './libraries/PepeswapV2Library.sol';
 import './interfaces/IPepeswapV2Router01.sol';
-import './interfaces/IERC20.sol';
-import './interfaces/IWETH.sol';
+import './interfaces/IBEP20.sol';
+import './interfaces/IWBNB.sol';
 
 contract PepeswapV2Router01 is IPepeswapV2Router01 {
     address public immutable override factory;
-    address public immutable override WETH;
+    address public immutable override WBNB;
 
     modifier ensure(uint deadline) {
         require(deadline >= block.timestamp, 'PepeswapV2Router: EXPIRED');
         _;
     }
 
-    constructor(address _factory, address _WETH) public {
+    constructor(address _factory, address _WBNB) public {
         factory = _factory;
-        WETH = _WETH;
+        WBNB = _WBNB;
     }
 
     receive() external payable {
-        assert(msg.sender == WETH); // only accept ETH via fallback from the WETH contract
+        assert(msg.sender == WBNB); // only accept BNB via fallback from the WBNB contract
     }
 
     // **** ADD LIQUIDITY ****
@@ -71,28 +71,28 @@ contract PepeswapV2Router01 is IPepeswapV2Router01 {
         TransferHelper.safeTransferFrom(tokenB, msg.sender, pair, amountB);
         liquidity = IUniswapV2Pair(pair).mint(to);
     }
-    function addLiquidityETH(
+    function addLiquidityBNB(
         address token,
         uint amountTokenDesired,
         uint amountTokenMin,
-        uint amountETHMin,
+        uint amountBNBMin,
         address to,
         uint deadline
-    ) external override payable ensure(deadline) returns (uint amountToken, uint amountETH, uint liquidity) {
-        (amountToken, amountETH) = _addLiquidity(
+    ) external override payable ensure(deadline) returns (uint amountToken, uint amountBNB, uint liquidity) {
+        (amountToken, amountBNB) = _addLiquidity(
             token,
-            WETH,
+            WBNB,
             amountTokenDesired,
             msg.value,
             amountTokenMin,
-            amountETHMin
+            amountBNBMin
         );
-        address pair = PepeswapV2Library.pairFor(factory, token, WETH);
+        address pair = PepeswapV2Library.pairFor(factory, token, WBNB);
         TransferHelper.safeTransferFrom(token, msg.sender, pair, amountToken);
-        IWETH(WETH).deposit{value: amountETH}();
-        assert(IWETH(WETH).transfer(pair, amountETH));
+        IWBNB(WBNB).deposit{value: amountBNB}();
+        assert(IWBNB(WBNB).transfer(pair, amountBNB));
         liquidity = IUniswapV2Pair(pair).mint(to);
-        if (msg.value > amountETH) TransferHelper.safeTransferETH(msg.sender, msg.value - amountETH); // refund dust eth, if any
+        if (msg.value > amountBNB) TransferHelper.safeTransferBNB(msg.sender, msg.value - amountBNB); // refund dust BNB, if any
     }
 
     // **** REMOVE LIQUIDITY ****
@@ -113,26 +113,26 @@ contract PepeswapV2Router01 is IPepeswapV2Router01 {
         require(amountA >= amountAMin, 'PepeswapV2Router: INSUFFICIENT_A_AMOUNT');
         require(amountB >= amountBMin, 'PepeswapV2Router: INSUFFICIENT_B_AMOUNT');
     }
-    function removeLiquidityETH(
+    function removeLiquidityBNB(
         address token,
         uint liquidity,
         uint amountTokenMin,
-        uint amountETHMin,
+        uint amountBNBMin,
         address to,
         uint deadline
-    ) public override ensure(deadline) returns (uint amountToken, uint amountETH) {
-        (amountToken, amountETH) = removeLiquidity(
+    ) public override ensure(deadline) returns (uint amountToken, uint amountBNB) {
+        (amountToken, amountBNB) = removeLiquidity(
             token,
-            WETH,
+            WBNB,
             liquidity,
             amountTokenMin,
-            amountETHMin,
+            amountBNBMin,
             address(this),
             deadline
         );
         TransferHelper.safeTransfer(token, to, amountToken);
-        IWETH(WETH).withdraw(amountETH);
-        TransferHelper.safeTransferETH(to, amountETH);
+        IWBNB(WBNB).withdraw(amountBNB);
+        TransferHelper.safeTransferBNB(to, amountBNB);
     }
     function removeLiquidityWithPermit(
         address tokenA,
@@ -149,19 +149,19 @@ contract PepeswapV2Router01 is IPepeswapV2Router01 {
         IUniswapV2Pair(pair).permit(msg.sender, address(this), value, deadline, v, r, s);
         (amountA, amountB) = removeLiquidity(tokenA, tokenB, liquidity, amountAMin, amountBMin, to, deadline);
     }
-    function removeLiquidityETHWithPermit(
+    function removeLiquidityBNBWithPermit(
         address token,
         uint liquidity,
         uint amountTokenMin,
-        uint amountETHMin,
+        uint amountBNBMin,
         address to,
         uint deadline,
         bool approveMax, uint8 v, bytes32 r, bytes32 s
-    ) external override returns (uint amountToken, uint amountETH) {
-        address pair = PepeswapV2Library.pairFor(factory, token, WETH);
+    ) external override returns (uint amountToken, uint amountBNB) {
+        address pair = PepeswapV2Library.pairFor(factory, token, WBNB);
         uint value = approveMax ? uint(-1) : liquidity;
         IUniswapV2Pair(pair).permit(msg.sender, address(this), value, deadline, v, r, s);
-        (amountToken, amountETH) = removeLiquidityETH(token, liquidity, amountTokenMin, amountETHMin, to, deadline);
+        (amountToken, amountBNB) = removeLiquidityBNB(token, liquidity, amountTokenMin, amountBNBMin, to, deadline);
     }
 
     // **** SWAP ****
@@ -200,62 +200,62 @@ contract PepeswapV2Router01 is IPepeswapV2Router01 {
         TransferHelper.safeTransferFrom(path[0], msg.sender, PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]);
         _swap(amounts, path, to);
     }
-    function swapExactETHForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)
+    function swapExactBNBForTokens(uint amountOutMin, address[] calldata path, address to, uint deadline)
         external
         override
         payable
         ensure(deadline)
         returns (uint[] memory amounts)
     {
-        require(path[0] == WETH, 'PepeswapV2Router: INVALID_PATH');
+        require(path[0] == WBNB, 'PepeswapV2Router: INVALID_PATH');
         amounts = PepeswapV2Library.getAmountsOut(factory, msg.value, path);
         require(amounts[amounts.length - 1] >= amountOutMin, 'PepeswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT');
-        IWETH(WETH).deposit{value: amounts[0]}();
-        assert(IWETH(WETH).transfer(PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
+        IWBNB(WBNB).deposit{value: amounts[0]}();
+        assert(IWBNB(WBNB).transfer(PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);
     }
-    function swapTokensForExactETH(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
+    function swapTokensForExactBNB(uint amountOut, uint amountInMax, address[] calldata path, address to, uint deadline)
         external
         override
         ensure(deadline)
         returns (uint[] memory amounts)
     {
-        require(path[path.length - 1] == WETH, 'PepeswapV2Router: INVALID_PATH');
+        require(path[path.length - 1] == WBNB, 'PepeswapV2Router: INVALID_PATH');
         amounts = PepeswapV2Library.getAmountsIn(factory, amountOut, path);
         require(amounts[0] <= amountInMax, 'PepeswapV2Router: EXCESSIVE_INPUT_AMOUNT');
         TransferHelper.safeTransferFrom(path[0], msg.sender, PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]);
         _swap(amounts, path, address(this));
-        IWETH(WETH).withdraw(amounts[amounts.length - 1]);
-        TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
+        IWBNB(WBNB).withdraw(amounts[amounts.length - 1]);
+        TransferHelper.safeTransferBNB(to, amounts[amounts.length - 1]);
     }
-    function swapExactTokensForETH(uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
+    function swapExactTokensForBNB(uint amountIn, uint amountOutMin, address[] calldata path, address to, uint deadline)
         external
         override
         ensure(deadline)
         returns (uint[] memory amounts)
     {
-        require(path[path.length - 1] == WETH, 'PepeswapV2Router: INVALID_PATH');
+        require(path[path.length - 1] == WBNB, 'PepeswapV2Router: INVALID_PATH');
         amounts = PepeswapV2Library.getAmountsOut(factory, amountIn, path);
         require(amounts[amounts.length - 1] >= amountOutMin, 'PepeswapV2Router: INSUFFICIENT_OUTPUT_AMOUNT');
         TransferHelper.safeTransferFrom(path[0], msg.sender, PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]);
         _swap(amounts, path, address(this));
-        IWETH(WETH).withdraw(amounts[amounts.length - 1]);
-        TransferHelper.safeTransferETH(to, amounts[amounts.length - 1]);
+        IWBNB(WBNB).withdraw(amounts[amounts.length - 1]);
+        TransferHelper.safeTransferBNB(to, amounts[amounts.length - 1]);
     }
-    function swapETHForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline)
+    function swapBNBForExactTokens(uint amountOut, address[] calldata path, address to, uint deadline)
         external
         override
         payable
         ensure(deadline)
         returns (uint[] memory amounts)
     {
-        require(path[0] == WETH, 'PepeswapV2Router: INVALID_PATH');
+        require(path[0] == WBNB, 'PepeswapV2Router: INVALID_PATH');
         amounts = PepeswapV2Library.getAmountsIn(factory, amountOut, path);
         require(amounts[0] <= msg.value, 'PepeswapV2Router: EXCESSIVE_INPUT_AMOUNT');
-        IWETH(WETH).deposit{value: amounts[0]}();
-        assert(IWETH(WETH).transfer(PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
+        IWBNB(WBNB).deposit{value: amounts[0]}();
+        assert(IWBNB(WBNB).transfer(PepeswapV2Library.pairFor(factory, path[0], path[1]), amounts[0]));
         _swap(amounts, path, to);
-        if (msg.value > amounts[0]) TransferHelper.safeTransferETH(msg.sender, msg.value - amounts[0]); // refund dust eth, if any
+        if (msg.value > amounts[0]) TransferHelper.safeTransferBNB(msg.sender, msg.value - amounts[0]); // refund dust BNB, if any
     }
 
     function quote(uint amountA, uint reserveA, uint reserveB) public pure override returns (uint amountB) {

@@ -21,7 +21,7 @@ library PepeswapV2Library {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f' // init code hash
+                hex'fbf8b0d7e1edf4984120d0a0eb1b4a536f7316c689b8e967e3368720cf088d40' // init code hash
             ))));
     }
 

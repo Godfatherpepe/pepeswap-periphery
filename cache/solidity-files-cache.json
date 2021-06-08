@@ -1,0 +1,1206 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\examples\\ExampleComputeLiquidityValue.sol": {
+      "lastModificationDate": 1622076794667,
+      "contentHash": "20f9dc2cbe88b9469dc5ac16a7b7930f",
+      "sourceName": "contracts/examples/ExampleComputeLiquidityValue.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/PepeswapV2LiquidityMathLibrary.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "ExampleComputeLiquidityValue"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\libraries\\PepeswapV2LiquidityMathLibrary.sol": {
+      "lastModificationDate": 1620787995559,
+      "contentHash": "5a2019a62dbc29c4ae4bcc6b5657d178",
+      "sourceName": "contracts/libraries/PepeswapV2LiquidityMathLibrary.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/lib/contracts/libraries/Babylonian.sol",
+        "@uniswap/lib/contracts/libraries/FullMath.sol",
+        "./SafeMath.sol",
+        "./PepeswapV2Library.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PepeswapV2LiquidityMathLibrary"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\v2-core\\contracts\\interfaces\\IUniswapV2Pair.sol": {
+      "lastModificationDate": 1620783379791,
+      "contentHash": "3fa31c3860f2b9585c3a98c64850829e",
+      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\v2-core\\contracts\\interfaces\\IUniswapV2Factory.sol": {
+      "lastModificationDate": 1620783379791,
+      "contentHash": "ec39b5372f4f4d52101b4da561e2aee6",
+      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Factory"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\lib\\contracts\\libraries\\Babylonian.sol": {
+      "lastModificationDate": 1620783379758,
+      "contentHash": "3f7a9d2b13eebc20350a1cc42ed09b16",
+      "sourceName": "@uniswap/lib/contracts/libraries/Babylonian.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "Babylonian"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\lib\\contracts\\libraries\\FullMath.sol": {
+      "lastModificationDate": 1620783379759,
+      "contentHash": "23bbd047cedfd8027fb139fcab949cc0",
+      "sourceName": "@uniswap/lib/contracts/libraries/FullMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "FullMath"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\libraries\\SafeMath.sol": {
+      "lastModificationDate": 1622076835573,
+      "contentHash": "0babe43d7abf54730597c5313ae8e4c8",
+      "sourceName": "contracts/libraries/SafeMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "SafeMath"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\libraries\\PepeswapV2Library.sol": {
+      "lastModificationDate": 1622070422085,
+      "contentHash": "33d19750b87d96eeab48ced8c34f3506",
+      "sourceName": "contracts/libraries/PepeswapV2Library.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "./SafeMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PepeswapV2Library"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\examples\\ExampleSwapToPrice.sol": {
+      "lastModificationDate": 1622077894012,
+      "contentHash": "9f37682321ebf2bb8419c3cbb53b5cc3",
+      "sourceName": "contracts/examples/ExampleSwapToPrice.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/lib/contracts/libraries/Babylonian.sol",
+        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+        "../libraries/PepeswapV2LiquidityMathLibrary.sol",
+        "../interfaces/IBEP20.sol",
+        "../interfaces/IPepeswapV2Router01.sol",
+        "../libraries/SafeMath.sol",
+        "../libraries/PepeswapV2Library.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "ExampleSwapToPrice"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\lib\\contracts\\libraries\\TransferHelper.sol": {
+      "lastModificationDate": 1622078180794,
+      "contentHash": "2e8303a326914531f56540c3af3e394a",
+      "sourceName": "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.0"
+      ],
+      "artifacts": [
+        "TransferHelper"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\IBEP20.sol": {
+      "lastModificationDate": 1622042484226,
+      "contentHash": "1a1e5d6d7188364ca0ffe994708e2b97",
+      "sourceName": "contracts/interfaces/IBEP20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IBEP20"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\IPepeswapV2Router01.sol": {
+      "lastModificationDate": 1622042927953,
+      "contentHash": "7f978f391afd6efc6ff41489c8cb0431",
+      "sourceName": "contracts/interfaces/IPepeswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IPepeswapV2Router01"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\PepeswapV2Router02.sol": {
+      "lastModificationDate": 1622934459049,
+      "contentHash": "fb700d2c55e64e8f075a2308132f084f",
+      "sourceName": "contracts/PepeswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+        "./interfaces/IPepeswapV2Router02.sol",
+        "./libraries/PepeswapV2Library.sol",
+        "./libraries/SafeMath.sol",
+        "./interfaces/IBEP20.sol",
+        "./interfaces/IWBNB.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "PepeswapV2Router02"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\IPepeswapV2Router02.sol": {
+      "lastModificationDate": 1622083993769,
+      "contentHash": "f2bf3f60b0d2159a99799f14513c8f41",
+      "sourceName": "contracts/interfaces/IPepeswapV2Router02.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPepeswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IPepeswapV2Router02"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\IWBNB.sol": {
+      "lastModificationDate": 1621994935272,
+      "contentHash": "6e41c4a52fd98c23ebdb063d55922606",
+      "sourceName": "contracts/interfaces/IWBNB.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IWBNB"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\PepeswapV2Router01.sol": {
+      "lastModificationDate": 1622126331468,
+      "contentHash": "51dc90dcd926baddae58b58e563cdccb",
+      "sourceName": "contracts/PepeswapV2Router01.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+        "./libraries/PepeswapV2Library.sol",
+        "./interfaces/IPepeswapV2Router01.sol",
+        "./interfaces/IBEP20.sol",
+        "./interfaces/IWBNB.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "PepeswapV2Router01"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\PepeswapV2Migrator.sol": {
+      "lastModificationDate": 1622076775681,
+      "contentHash": "345fb619b33f96200a4252eaf8e5e54b",
+      "sourceName": "contracts/PepeswapV2Migrator.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+        "./interfaces/IPepeswapV2Migrator.sol",
+        "./interfaces/V1/IPepeswapV1Factory.sol",
+        "./interfaces/V1/IPepeswapV1Exchange.sol",
+        "./interfaces/IPepeswapV2Router01.sol",
+        "./interfaces/IBEP20.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "PepeswapV2Migrator"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\IPepeswapV2Migrator.sol": {
+      "lastModificationDate": 1622065890702,
+      "contentHash": "9ff4ed39aa8ae66bd8cc1bbcf0150737",
+      "sourceName": "contracts/interfaces/IPepeswapV2Migrator.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPepeswapV2Migrator"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\V1\\IPepeswapV1Factory.sol": {
+      "lastModificationDate": 1620783786971,
+      "contentHash": "1c135cc86b167a5ae34e8e6b9ff230f6",
+      "sourceName": "contracts/interfaces/V1/IPepeswapV1Factory.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPepeswapV1Factory"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\interfaces\\V1\\IPepeswapV1Exchange.sol": {
+      "lastModificationDate": 1622078325428,
+      "contentHash": "8e286d379dc596b651aa0846a002a361",
+      "sourceName": "contracts/interfaces/V1/IPepeswapV1Exchange.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IPepeswapV1Exchange"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\test\\RouterEventEmitter.sol": {
+      "lastModificationDate": 1622076964945,
+      "contentHash": "00fad2d65f43b692ff5990af40d7f3a1",
+      "sourceName": "contracts/test/RouterEventEmitter.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../interfaces/IPepeswapV2Router01.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "RouterEventEmitter"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\examples\\ExampleFlashSwap.sol": {
+      "lastModificationDate": 1622078416165,
+      "contentHash": "d627ddd15be7c16d5577dc62386f1910",
+      "sourceName": "contracts/examples/ExampleFlashSwap.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol",
+        "../libraries/PepeswapV2Library.sol",
+        "../interfaces/V1/IPepeswapV1Factory.sol",
+        "../interfaces/V1/IPepeswapV1Exchange.sol",
+        "../interfaces/IPepeswapV2Router01.sol",
+        "../interfaces/IBEP20.sol",
+        "../interfaces/IWBNB.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "ExampleFlashSwap"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\v2-core\\contracts\\interfaces\\IUniswapV2Callee.sol": {
+      "lastModificationDate": 1620783379790,
+      "contentHash": "30a4aed15b3fa3ce5588118b7cecfa7f",
+      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Callee"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\examples\\ExampleSlidingWindowOracle.sol": {
+      "lastModificationDate": 1622076806818,
+      "contentHash": "1f9de11457393f3e2763fe4152d73e04",
+      "sourceName": "contracts/examples/ExampleSlidingWindowOracle.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/lib/contracts/libraries/FixedPoint.sol",
+        "../libraries/SafeMath.sol",
+        "../libraries/PepeswapV2Library.sol",
+        "../libraries/PepeswapV2OracleLibrary.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "ExampleSlidingWindowOracle"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\lib\\contracts\\libraries\\FixedPoint.sol": {
+      "lastModificationDate": 1620783379759,
+      "contentHash": "9c78b75695500ec38a85fea7d923fbf0",
+      "sourceName": "@uniswap/lib/contracts/libraries/FixedPoint.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./FullMath.sol",
+        "./Babylonian.sol",
+        "./BitMath.sol"
+      ],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "FixedPoint"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\libraries\\PepeswapV2OracleLibrary.sol": {
+      "lastModificationDate": 1620785618554,
+      "contentHash": "c8abeb7d78bb198ff9db2513fef3aa4c",
+      "sourceName": "contracts/libraries/PepeswapV2OracleLibrary.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/lib/contracts/libraries/FixedPoint.sol"
+      ],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "PepeswapV2OracleLibrary"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\node_modules\\@uniswap\\lib\\contracts\\libraries\\BitMath.sol": {
+      "lastModificationDate": 1620783379758,
+      "contentHash": "9268c1120c875c017e31caad9aa38921",
+      "sourceName": "@uniswap/lib/contracts/libraries/BitMath.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "BitMath"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\examples\\ExampleOracleSimple.sol": {
+      "lastModificationDate": 1622076803085,
+      "contentHash": "67d0747b0d819b3175bfa12703b65ead",
+      "sourceName": "contracts/examples/ExampleOracleSimple.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/lib/contracts/libraries/FixedPoint.sol",
+        "../libraries/PepeswapV2OracleLibrary.sol",
+        "../libraries/PepeswapV2Library.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "ExampleOracleSimple"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\test\\DeflatingBEP20.sol": {
+      "lastModificationDate": 1622076879160,
+      "contentHash": "9ae99617dc54c7b80bad6b5c80ab5c07",
+      "sourceName": "contracts/test/DeflatingBEP20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "DeflatingBNB20"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\test\\BEP20.sol": {
+      "lastModificationDate": 1622076896329,
+      "contentHash": "d84b17b4939b6a954e12402e53d822b5",
+      "sourceName": "contracts/test/BEP20.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../libraries/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "BEP20"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\Migrations.sol": {
+      "lastModificationDate": 1618577563975,
+      "contentHash": "50b3b1dc92806dc8f604fc8c5c65518f",
+      "sourceName": "contracts/Migrations.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "Migrations"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\test\\WBNB9.sol": {
+      "lastModificationDate": 1622076958676,
+      "contentHash": "25920f2ecb3bef6a709be75a98c80aea",
+      "sourceName": "contracts/test/WBNB9.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "=0.6.12"
+      ],
+      "artifacts": [
+        "WBNB9"
+      ]
+    },
+    "C:\\Users\\fsong\\pepeswap\\periphery\\contracts\\WBNB.sol": {
+      "lastModificationDate": 1622076553449,
+      "contentHash": "44459c7a60fa26d6afbd1a7f8066ae3e",
+      "sourceName": "contracts/WBNB.sol",
+      "solcConfig": {
+        "version": "0.6.12",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.6.12"
+      ],
+      "artifacts": [
+        "WBNB"
+      ]
+    }
+  }
+}
