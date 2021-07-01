@@ -14,9 +14,12 @@ module.exports = {
     testnet: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://data-seed-prebsc-1-s1.binance.org:8545`),
       network_id: 97,
-      confirmations: 10,
-      timeoutBlocks: 200,
-      skipDryRun: true
+      gas: 9721975,
+      gasPrice:20000000000,
+      confirmations: 5,
+      // timeoutBlocks: 200,
+      skipDryRun: true,
+
     },
     bsc: {
       provider: () => new HDWalletProvider(process.env.MNEMONIC, `https://bsc-dataseed1.binance.org`),
