@@ -1,12 +1,12 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/examples/ExampleComputeLiquidityValue.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "070ff8441f1d966c8f163d7b5ec0f02e",
-      "sourceName": "contracts/examples/ExampleComputeLiquidityValue.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/examples/ExampleSlidingWindowOracle.sol": {
+      "lastModificationDate": 1625198545941,
+      "contentHash": "ea7350c4244e50970da5609a86b36160",
+      "sourceName": "contracts/examples/ExampleSlidingWindowOracle.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -28,62 +28,26 @@
         }
       },
       "imports": [
-        "../libraries/PepeswapV2LiquidityMathLibrary.sol"
+        "../interfaces/IPepeswapFactory.sol",
+        "../interfaces/IPepePair.sol",
+        "@uniswap/lib/contracts/libraries/FixedPoint.sol",
+        "../libraries/SafeMath.sol",
+        "../libraries/PepeswapLibrary.sol",
+        "../libraries/PepeswapOracleLibrary.sol"
       ],
       "versionPragmas": [
-        "=0.6.12"
+        ">=0.6.6"
       ],
       "artifacts": [
-        "ExampleComputeLiquidityValue"
+        "ExampleSlidingWindowOracle"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/libraries/PepeswapV2LiquidityMathLibrary.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "cbea2aecc1fbdcd9b4ce008f546c3976",
-      "sourceName": "contracts/libraries/PepeswapV2LiquidityMathLibrary.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IPepeswapFactory.sol": {
+      "lastModificationDate": 1625198466917,
+      "contentHash": "8bbd82b3f1e9c176fdb5f1b9cbb97316",
+      "sourceName": "contracts/interfaces/IPepeswapFactory.sol",
       "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
-        "@uniswap/lib/contracts/libraries/Babylonian.sol",
-        "@uniswap/lib/contracts/libraries/FullMath.sol",
-        "./SafeMath.sol",
-        "./PepeswapV2Library.sol"
-      ],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "PepeswapV2LiquidityMathLibrary"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol": {
-      "lastModificationDate": 1625104624555,
-      "contentHash": "3fa31c3860f2b9585c3a98c64850829e",
-      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-      "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -106,18 +70,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.5.0"
+        ">=0.6.6"
       ],
       "artifacts": [
-        "IUniswapV2Pair"
+        "IPepeswapFactory"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol": {
-      "lastModificationDate": 1625104624553,
-      "contentHash": "ec39b5372f4f4d52101b4da561e2aee6",
-      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IPepePair.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "d0b4720661dcc7ca608696438cd9f65b",
+      "sourceName": "contracts/interfaces/IPepePair.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -140,18 +104,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.5.0"
+        ">=0.6.6"
       ],
       "artifacts": [
-        "IUniswapV2Factory"
+        "IPepePair"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/lib/contracts/libraries/Babylonian.sol": {
-      "lastModificationDate": 1625104624856,
-      "contentHash": "3f7a9d2b13eebc20350a1cc42ed09b16",
-      "sourceName": "@uniswap/lib/contracts/libraries/Babylonian.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/node_modules/@uniswap/lib/contracts/libraries/FixedPoint.sol": {
+      "lastModificationDate": 1625197633874,
+      "contentHash": "dc596f83d7c5841f61b8c8b244ff59e9",
+      "sourceName": "@uniswap/lib/contracts/libraries/FixedPoint.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -177,49 +141,15 @@
         ">=0.4.0"
       ],
       "artifacts": [
-        "Babylonian"
+        "FixedPoint"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/lib/contracts/libraries/FullMath.sol": {
-      "lastModificationDate": 1625104624897,
-      "contentHash": "23bbd047cedfd8027fb139fcab949cc0",
-      "sourceName": "@uniswap/lib/contracts/libraries/FullMath.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.4.0"
-      ],
-      "artifacts": [
-        "FullMath"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/libraries/SafeMath.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "25fc0114990a5c43befdaa9501c48531",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/libraries/SafeMath.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "9f77127a0e2c55c2058453327e84bde3",
       "sourceName": "contracts/libraries/SafeMath.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -242,18 +172,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        "=0.6.12"
+        "=0.6.6"
       ],
       "artifacts": [
         "SafeMath"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/libraries/PepeswapV2Library.sol": {
-      "lastModificationDate": 1625104059014,
-      "contentHash": "b4c71c9f15c3fbf5c7a2a6758295a808",
-      "sourceName": "contracts/libraries/PepeswapV2Library.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/libraries/PepeswapLibrary.sol": {
+      "lastModificationDate": 1625198152850,
+      "contentHash": "f0dd62976e3cb6c682149a0d8e4c6e8c",
+      "sourceName": "contracts/libraries/PepeswapLibrary.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -275,22 +205,22 @@
         }
       },
       "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "../interfaces/IPepePair.sol",
         "./SafeMath.sol"
       ],
       "versionPragmas": [
         ">=0.5.0"
       ],
       "artifacts": [
-        "PepeswapV2Library"
+        "PepeswapLibrary"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/examples/ExampleSwapToPrice.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "15da023d3211b32ff418ac2d70b25ea4",
-      "sourceName": "contracts/examples/ExampleSwapToPrice.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/libraries/PepeswapOracleLibrary.sol": {
+      "lastModificationDate": 1625198155614,
+      "contentHash": "5d21aec87dffca36a6f5eddf836c6e2c",
+      "sourceName": "contracts/libraries/PepeswapOracleLibrary.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -312,28 +242,64 @@
         }
       },
       "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-        "@uniswap/lib/contracts/libraries/Babylonian.sol",
-        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
-        "../libraries/PepeswapV2LiquidityMathLibrary.sol",
-        "../interfaces/IBEP20.sol",
-        "../interfaces/IPepeswapV2Router01.sol",
-        "../libraries/SafeMath.sol",
-        "../libraries/PepeswapV2Library.sol"
+        "../interfaces/IPepePair.sol",
+        "@uniswap/lib/contracts/libraries/FixedPoint.sol"
       ],
       "versionPragmas": [
-        "=0.6.12"
+        ">=0.5.0"
       ],
       "artifacts": [
-        "ExampleSwapToPrice"
+        "PepeswapOracleLibrary"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/lib/contracts/libraries/TransferHelper.sol": {
-      "lastModificationDate": 1625104515829,
-      "contentHash": "53c1726baa84675f853b76704c7a0b52",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/PepeswapRouter02.sol": {
+      "lastModificationDate": 1625199945366,
+      "contentHash": "d1a663fdbf0c6522bb4d94d29814377b",
+      "sourceName": "contracts/PepeswapRouter02.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IPepeswapFactory.sol",
+        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
+        "./interfaces/IPepeswapRouter02.sol",
+        "./libraries/PepeswapLibrary.sol",
+        "./libraries/SafeMath.sol",
+        "./interfaces/IERC20.sol",
+        "./interfaces/IWETH.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.6"
+      ],
+      "artifacts": [
+        "PepeswapRouter02"
+      ]
+    },
+    "/Users/shadman/Projects/apeswap-swap-periphery/node_modules/@uniswap/lib/contracts/libraries/TransferHelper.sol": {
+      "lastModificationDate": 1625197634157,
+      "contentHash": "217eebcde87d40a3d470ac72f50c6aba",
       "sourceName": "@uniswap/lib/contracts/libraries/TransferHelper.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -362,12 +328,48 @@
         "TransferHelper"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/IBEP20.sol": {
-      "lastModificationDate": 1625079814665,
-      "contentHash": "8c80de0486f4bfdf5d453e06e712160e",
-      "sourceName": "contracts/interfaces/IBEP20.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IPepeswapRouter02.sol": {
+      "lastModificationDate": 1625199093267,
+      "contentHash": "efce38de4be2c4b1fa19160898f0c7f4",
+      "sourceName": "contracts/interfaces/IPepeswapRouter02.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IPepeswapRouter01.sol"
+      ],
+      "versionPragmas": [
+        ">=0.6.2"
+      ],
+      "artifacts": [
+        "IPepeswapRouter02"
+      ]
+    },
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "3d2b948a9266ee66b6e739de97c7e6e9",
+      "sourceName": "contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -393,15 +395,49 @@
         ">=0.5.0"
       ],
       "artifacts": [
-        "IBEP20"
+        "IERC20"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/IPepeswapV2Router01.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "d679ccb8dd8a1d1849b4d8ae75d67e24",
-      "sourceName": "contracts/interfaces/IPepeswapV2Router01.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IWETH.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "270f2c1a1f22475259d5a2f6a524f72e",
+      "sourceName": "contracts/interfaces/IWETH.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IWETH"
+      ]
+    },
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IPepeswapRouter01.sol": {
+      "lastModificationDate": 1625198708332,
+      "contentHash": "073a902d1715051eb1c04faed56f791a",
+      "sourceName": "contracts/interfaces/IPepeswapRouter01.sol",
+      "solcConfig": {
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -427,15 +463,15 @@
         ">=0.6.2"
       ],
       "artifacts": [
-        "IPepeswapV2Router01"
+        "IPepeswapRouter01"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/PepeswapV2Router02.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "b25758f42203adf62af13ae7643e058f",
-      "sourceName": "contracts/PepeswapV2Router02.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/examples/ExampleSwapToPrice.sol": {
+      "lastModificationDate": 1625198702440,
+      "contentHash": "0b61fa65c9fcee24e106ea624184ea42",
+      "sourceName": "contracts/examples/ExampleSwapToPrice.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -457,27 +493,95 @@
         }
       },
       "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
+        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
+        "@uniswap/lib/contracts/libraries/Babylonian.sol",
         "@uniswap/lib/contracts/libraries/TransferHelper.sol",
-        "./interfaces/IPepeswapV2Router02.sol",
-        "./libraries/PepeswapV2Library.sol",
-        "./libraries/SafeMath.sol",
-        "./interfaces/IBEP20.sol",
-        "./interfaces/IWBNB.sol"
+        "../interfaces/IERC20.sol",
+        "../interfaces/IPepeswapRouter01.sol",
+        "../libraries/SafeMath.sol",
+        "../libraries/PepeswapLibrary.sol"
       ],
       "versionPragmas": [
-        "=0.6.12"
+        ">=0.6.6"
       ],
       "artifacts": [
-        "PepeswapV2Router02"
+        "ExampleSwapToPrice"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/IPepeswapV2Router02.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "9c52722703a1912c37fdd2557c1a237f",
-      "sourceName": "contracts/interfaces/IPepeswapV2Router02.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/node_modules/@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol": {
+      "lastModificationDate": 1625197638256,
+      "contentHash": "3fa31c3860f2b9585c3a98c64850829e",
+      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.5.0"
+      ],
+      "artifacts": [
+        "IUniswapV2Pair"
+      ]
+    },
+    "/Users/shadman/Projects/apeswap-swap-periphery/node_modules/@uniswap/lib/contracts/libraries/Babylonian.sol": {
+      "lastModificationDate": 1625197633643,
+      "contentHash": "c1c9269c5671ee79dc6b477c4a8aaf96",
+      "sourceName": "@uniswap/lib/contracts/libraries/Babylonian.sol",
+      "solcConfig": {
+        "version": "0.6.6",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.0"
+      ],
+      "artifacts": [
+        "Babylonian"
+      ]
+    },
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/test/ERC20.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "3c84c6f456884e55b360a8450d0f0446",
+      "sourceName": "contracts/test/ERC20.sol",
+      "solcConfig": {
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -499,55 +603,21 @@
         }
       },
       "imports": [
-        "./IPepeswapV2Router01.sol"
+        "../libraries/SafeMath.sol"
       ],
       "versionPragmas": [
-        ">=0.6.2"
+        "=0.6.6"
       ],
       "artifacts": [
-        "IPepeswapV2Router02"
+        "ERC20"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/IWBNB.sol": {
-      "lastModificationDate": 1625079814665,
-      "contentHash": "b0c6892e5bc168f507e6246dcd969f88",
-      "sourceName": "contracts/interfaces/IWBNB.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/test/DeflatingERC20.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "7476ba791f9afb6f870f10560972e0a0",
+      "sourceName": "contracts/test/DeflatingERC20.sol",
       "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IWBNB"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/PepeswapV2Router01.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "57435cf0f870b221f53b452023df7afd",
-      "sourceName": "contracts/PepeswapV2Router01.sol",
-      "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -569,169 +639,21 @@
         }
       },
       "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
-        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
-        "./libraries/PepeswapV2Library.sol",
-        "./interfaces/IPepeswapV2Router01.sol",
-        "./interfaces/IBEP20.sol",
-        "./interfaces/IWBNB.sol"
+        "../libraries/SafeMath.sol"
       ],
       "versionPragmas": [
-        "=0.6.12"
+        "=0.6.6"
       ],
       "artifacts": [
-        "PepeswapV2Router01"
+        "DeflatingERC20"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/PepeswapV2Migrator.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "bd909cdb7ace8e84acb08c3173668939",
-      "sourceName": "contracts/PepeswapV2Migrator.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/lib/contracts/libraries/TransferHelper.sol",
-        "./interfaces/IPepeswapV2Migrator.sol",
-        "./interfaces/V1/IPepeswapV1Factory.sol",
-        "./interfaces/V1/IPepeswapV1Exchange.sol",
-        "./interfaces/IPepeswapV2Router01.sol",
-        "./interfaces/IBEP20.sol"
-      ],
-      "versionPragmas": [
-        "=0.6.12"
-      ],
-      "artifacts": [
-        "PepeswapV2Migrator"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/IPepeswapV2Migrator.sol": {
-      "lastModificationDate": 1625079814665,
-      "contentHash": "41cd5c98666fc6a90594ad09d3bbc679",
-      "sourceName": "contracts/interfaces/IPepeswapV2Migrator.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IPepeswapV2Migrator"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/V1/IPepeswapV1Factory.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "037df704e5ab5daf8e7bf0b54b216acd",
-      "sourceName": "contracts/interfaces/V1/IPepeswapV1Factory.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IPepeswapV1Factory"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/interfaces/V1/IPepeswapV1Exchange.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "b5485dd7b92219408c144e42cbcbee1c",
-      "sourceName": "contracts/interfaces/V1/IPepeswapV1Exchange.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "IPepeswapV1Exchange"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/test/RouterEventEmitter.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "4bfc7c3d6812579de3b3f54f6ae7451d",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/test/RouterEventEmitter.sol": {
+      "lastModificationDate": 1625198726320,
+      "contentHash": "0d5ef0bdeef962d628f54a1d0fa7e298",
       "sourceName": "contracts/test/RouterEventEmitter.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -753,63 +675,21 @@
         }
       },
       "imports": [
-        "../interfaces/IPepeswapV2Router01.sol"
+        "../interfaces/IPepeswapRouter01.sol"
       ],
       "versionPragmas": [
-        "=0.6.12"
+        "=0.6.6"
       ],
       "artifacts": [
         "RouterEventEmitter"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/examples/ExampleFlashSwap.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "81b4ea5c6480a173e36d2cd8afe9448c",
-      "sourceName": "contracts/examples/ExampleFlashSwap.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/IPepeMigrator.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "408b1e9583a0ab04e196a76e56230ba5",
+      "sourceName": "contracts/interfaces/IPepeMigrator.sol",
       "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol",
-        "../libraries/PepeswapV2Library.sol",
-        "../interfaces/V1/IPepeswapV1Factory.sol",
-        "../interfaces/V1/IPepeswapV1Exchange.sol",
-        "../interfaces/IPepeswapV2Router01.sol",
-        "../interfaces/IBEP20.sol",
-        "../interfaces/IWBNB.sol"
-      ],
-      "versionPragmas": [
-        "=0.6.12"
-      ],
-      "artifacts": [
-        "ExampleFlashSwap"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol": {
-      "lastModificationDate": 1625104624557,
-      "contentHash": "30a4aed15b3fa3ce5588118b7cecfa7f",
-      "sourceName": "@uniswap/v2-core/contracts/interfaces/IUniswapV2Callee.sol",
-      "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -835,131 +715,15 @@
         ">=0.5.0"
       ],
       "artifacts": [
-        "IUniswapV2Callee"
+        "IPepeMigrator"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/examples/ExampleSlidingWindowOracle.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "21a2408813b35dd3e54503f827541484",
-      "sourceName": "contracts/examples/ExampleSlidingWindowOracle.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/V1/IUniswapV1Exchange.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "5ec7fe77a73b5ace5fc1fbae6b87f34e",
+      "sourceName": "contracts/interfaces/V1/IUniswapV1Exchange.sol",
       "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-        "@uniswap/lib/contracts/libraries/FixedPoint.sol",
-        "../libraries/SafeMath.sol",
-        "../libraries/PepeswapV2Library.sol",
-        "../libraries/PepeswapV2OracleLibrary.sol"
-      ],
-      "versionPragmas": [
-        "=0.6.12"
-      ],
-      "artifacts": [
-        "ExampleSlidingWindowOracle"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/lib/contracts/libraries/FixedPoint.sol": {
-      "lastModificationDate": 1625104624853,
-      "contentHash": "9c78b75695500ec38a85fea7d923fbf0",
-      "sourceName": "@uniswap/lib/contracts/libraries/FixedPoint.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "./FullMath.sol",
-        "./Babylonian.sol",
-        "./BitMath.sol"
-      ],
-      "versionPragmas": [
-        ">=0.4.0"
-      ],
-      "artifacts": [
-        "FixedPoint"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/libraries/PepeswapV2OracleLibrary.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "804024e9fb42a37127dd954a84559483",
-      "sourceName": "contracts/libraries/PepeswapV2OracleLibrary.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-        "@uniswap/lib/contracts/libraries/FixedPoint.sol"
-      ],
-      "versionPragmas": [
-        ">=0.5.0"
-      ],
-      "artifacts": [
-        "PepeswapV2OracleLibrary"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/node_modules/@uniswap/lib/contracts/libraries/BitMath.sol": {
-      "lastModificationDate": 1625104624850,
-      "contentHash": "9268c1120c875c017e31caad9aa38921",
-      "sourceName": "@uniswap/lib/contracts/libraries/BitMath.sol",
-      "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -985,15 +749,15 @@
         ">=0.5.0"
       ],
       "artifacts": [
-        "BitMath"
+        "IUniswapV1Exchange"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/examples/ExampleOracleSimple.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "1135d62db984178b4ad181a54b46508d",
-      "sourceName": "contracts/examples/ExampleOracleSimple.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/interfaces/V1/IUniswapV1Factory.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "abe9343b20a93919250e0dba78bfd9c1",
+      "sourceName": "contracts/interfaces/V1/IUniswapV1Factory.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1014,98 +778,20 @@
           }
         }
       },
-      "imports": [
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Factory.sol",
-        "@uniswap/v2-core/contracts/interfaces/IUniswapV2Pair.sol",
-        "@uniswap/lib/contracts/libraries/FixedPoint.sol",
-        "../libraries/PepeswapV2OracleLibrary.sol",
-        "../libraries/PepeswapV2Library.sol"
-      ],
+      "imports": [],
       "versionPragmas": [
-        "=0.6.12"
+        ">=0.5.0"
       ],
       "artifacts": [
-        "ExampleOracleSimple"
+        "IUniswapV1Factory"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/test/DeflatingBEP20.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "add1e322a8df606481a41d3bb0b32c48",
-      "sourceName": "contracts/test/DeflatingBEP20.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        "=0.6.12"
-      ],
-      "artifacts": [
-        "DeflatingBNB20"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/test/BEP20.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "25bdfde0621c21b448e692cdbc7e3cd6",
-      "sourceName": "contracts/test/BEP20.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../libraries/SafeMath.sol"
-      ],
-      "versionPragmas": [
-        "=0.6.12"
-      ],
-      "artifacts": [
-        "BEP20"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/Migrations.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "50b3b1dc92806dc8f604fc8c5c65518f",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/Migrations.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "6f3dc9936ec2cff1666c76993e7d6531",
       "sourceName": "contracts/Migrations.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1128,18 +814,18 @@
       },
       "imports": [],
       "versionPragmas": [
-        ">=0.4.22 <0.9.0"
+        ">=0.4.25 <0.7.0"
       ],
       "artifacts": [
         "Migrations"
       ]
     },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/test/WBNB9.sol": {
-      "lastModificationDate": 1625079814664,
-      "contentHash": "812b32e7badff573d6fa752ce3497eeb",
-      "sourceName": "contracts/test/WBNB9.sol",
+    "/Users/shadman/Projects/apeswap-swap-periphery/contracts/test/WETH9.sol": {
+      "lastModificationDate": 1625197308942,
+      "contentHash": "c60afbcd54ec9da3b3908e2db56c0d12",
+      "sourceName": "contracts/test/WETH9.sol",
       "solcConfig": {
-        "version": "0.6.12",
+        "version": "0.6.6",
         "settings": {
           "optimizer": {
             "enabled": true,
@@ -1162,44 +848,10 @@
       },
       "imports": [],
       "versionPragmas": [
-        "=0.6.12"
+        "=0.6.6"
       ],
       "artifacts": [
-        "WBNB9"
-      ]
-    },
-    "/Users/blockchaindev/Documents/pepeswap-periphery/contracts/WBNB.sol": {
-      "lastModificationDate": 1625079814665,
-      "contentHash": "9a57e43b9c2ef7055e8ac36857188724",
-      "sourceName": "contracts/WBNB.sol",
-      "solcConfig": {
-        "version": "0.6.12",
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.6.12"
-      ],
-      "artifacts": [
-        "WBNB"
+        "WETH9"
       ]
     }
   }

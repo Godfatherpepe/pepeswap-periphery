@@ -1,26 +1,57 @@
 {
-  "name": "periphery",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "PepeSwap-AMM-Periphery",
+  "version": "1.1.0-beta.0",
+  "description": "🎚 Router smart contracts for interacting with PepeSwap",
+  "engines": {
+    "node": ">=10"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "homepage": "https://apeswap.finance",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ApeSwapFinance/apeswap-swap-periphery"
+  },
+  "scripts": {
+    "lint": "yarn prettier ./test/*.ts --check",
+    "lint:fix": "yarn prettier ./test/*.ts --write",
+    "clean": "rimraf ./build/",
+    "precompile": "yarn clean",
+    "compile": "waffle .waffle.json",
+    "compile:truffle": "truffle compile",
+    "migrate:testnet": "truffle migrate --network testnet",
+    "migrate:dev": "truffle migrate --network development",
+    "flatten": "truffle-flattener ./contracts/ApeRouter.sol --output ./ApeRouter_flat.sol",
+    "pretest": "yarn compile",
+    "test": "mocha",
+    "prepublishOnly": "yarn test"
+  },
+  "files": [
+    "build",
+    "contracts"
+  ],
   "dependencies": {
-    "@uniswap/lib": "^4.0.1-alpha",
+    "@ethersproject/solidity": "^5.0.9",
+    "@uniswap/lib": "1.1.1",
     "@uniswap/v2-core": "^1.0.1",
-    "dotenv": "^9.0.2",
-    "truffle-hdwallet-provider": "^1.0.6"
+    "dotenv": "^10.0.0",
+    "truffle": "^5.1.65",
+    "truffle-flattener": "^1.5.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "truffle-plugin-verify": "^0.4.0"
   },
   "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.0.2",
-    "@nomiclabs/hardhat-waffle": "^2.0.1",
-    "chai": "^4.3.4",
-    "ethereum-waffle": "^2.2.0",
-    "ethers": "^5.2.0",
-    "hardhat": "^2.3.0"
-  }
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "ethereum-waffle": "^2.4.1",
+    "ethereumjs-util": "^6.2.0",
+    "hardhat": "^2.4.1",
+    "mocha": "^6.2.2",
+    "ncp": "^2.0.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.0",
+    "solc": "0.6.6",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.3"
+  },
+  "license": "GPL-3.0-or-later"
 }

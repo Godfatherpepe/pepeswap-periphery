@@ -1,6 +1,6 @@
 async function main(network) {
     let wbnb; 
-    const FACTORY_ADDRESS = "0xD185dDBC0c585E34eb97cF03BF9c6FDfb8718F57";
+    const FACTORY_ADDRESS = "0x24ab5a7EDcB7fa22c1853BCE2FD304F9aDa5a303";
 
     if(network === "bsc") {
         wbnb = await WBNB.at("0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c") 
@@ -8,15 +8,15 @@ async function main(network) {
         wbnb = await WBNB.at("0xae13d989daC2f0dEbFf460aC112a837C89BAa7cd")
     } else {
         const WBNB = await ethers.getContractFactory('WBNB');
-        wbnb = await WBNB.deploy();
+        weth = await WBNB.deploy();
     }
 
-    const PepeswapV2Router02 = await ethers.getContractFactory("PepeswapV2Router02")
-    const pepeswapV2Router02 = await PepeswapV2Router02.deploy(FACTORY_ADDRESS, wbnb.address)
+    const PepeswapRouter02 = await ethers.getContractFactory("PepeswapRouter02")
+    const pepeswapRouter02 = await PepeswapRouter02.deploy(FACTORY_ADDRESS, wbnb.address)
 
-    await pepeswapV2Router02.deployed();
+    await pepeswapRouter02.deployed();
 
-    console.log(`Router V02 deployed to :  ${pepeswapV2Router02.address}`);
+    console.log(`Pepe Router 02 deployed to :  ${pepeswapRouter02.address}`);
 }
 
 main()
