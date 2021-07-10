@@ -2,3 +2,4 @@
 .env
 /build
 /artifacts
+truffle-config.js
