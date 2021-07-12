@@ -30,7 +30,7 @@ library PepeswapLibrary {
                 hex'ff',
                 factory,
                 keccak256(abi.encodePacked(token0, token1)),
-                hex'702f52e962f672d842694e37e53eeab340ba26c18d05cde8e5e69d4306a8754d' // init code hash
+                hex'1e1ea7ac469a8b713abcf623ce528b00c7f756015528db479889c204725270da' // init code hash
             ))));
     }
 

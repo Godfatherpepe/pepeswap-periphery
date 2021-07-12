@@ -1,5 +1,5 @@
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 require('dotenv').config()
-const HDWalletProvider = require("truffle-hdwallet-provider");
 
 module.exports = {
  
@@ -29,14 +29,20 @@ module.exports = {
       skipDryRun: true
     },
   },
-
+  plugins: [
+    'truffle-plugin-verify'
+  ],
+  api_keys: {
+    // Add BSCSCAN_API_KEY in .env file to verify contracts deployed through truffle
+    etherscan: process.env.BSCSCAN_API_KEY
+  },
   mocha: {
  
   },
 
   compilers: {
     solc: {
-      version: "0.6.6",
+      version: "0.6.12",
       settings: {
         optimizer: {
           enabled: true,

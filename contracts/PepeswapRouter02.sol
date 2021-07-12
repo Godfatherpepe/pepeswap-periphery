@@ -1,4 +1,4 @@
-pragma solidity >=0.6.6;
+pragma solidity >=0.6.12;
 
 import './interfaces/IPepeswapFactory.sol';
 import '@uniswap/lib/contracts/libraries/TransferHelper.sol';
