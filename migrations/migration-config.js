@@ -8,7 +8,7 @@ const config = {
         WBNBAddress: '0xae13d989dac2f0debff460ac112a837c89baa7cd'
     },
     'bsc': {
-        factoryAddress: '0xebBFEE2dF17Be75Df863157Ca701e74fa42D359e',
+        factoryAddress: '0x06065602f976bf32aE656966CE65B09F97993447',
         WBNBAddress: '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c'
     }
 }

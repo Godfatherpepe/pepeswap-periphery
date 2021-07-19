@@ -17,7 +17,7 @@ module.exports = {
       gas: 9721975,
       gasPrice:20000000000,
       confirmations: 5,
-      // timeoutBlocks: 200,
+      networkCheckTimeout: 120000,
       skipDryRun: true,
 
     },
@@ -26,6 +26,7 @@ module.exports = {
       network_id: 56,
       confirmations: 10,
       timeoutBlocks: 200,
+      networkCheckTimeout: 120000,
       skipDryRun: true
     },
   },
